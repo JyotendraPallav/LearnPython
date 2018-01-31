@@ -42,4 +42,4 @@ print(glob.glob('*.*'))
 print("The Current Path is: ",os.path.realpath(__file__))
 
 # Answer for Q8
-print("The Current User is: ",getpass.getuser)
+print("The Current User is: ",getpass.getuser())
