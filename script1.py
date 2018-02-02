@@ -26,12 +26,13 @@ def extract():
           d['Sender']  = message.sender
           d['Size']    = message.size
           d['Body']    = message.body
+          d['To']      = message.To
           items.append(d)
 
       except Exception as inst:
           print("Error processing mail")
-     # subject=message.subject
-      #print(subject)
+      subject=message.subject
+      print(subject)
 
       message = messages.GetNext()
       
@@ -39,7 +40,8 @@ def showMessage():
   items.sort(key=lambda tup: tup['SentOn']) 
   
   for i in items:
-    print(i["SentOn"], i["Subject"])
+    # print(i["SentOn"], i["To"])
+    print(i)
     
 extract()
 showMessage()
