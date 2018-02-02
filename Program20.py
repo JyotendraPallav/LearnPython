@@ -37,11 +37,11 @@ else:
 
 # Solution: 3
 
-Text_to_check=raw_input("Please input the string to be added: ")
+Text_to_check=raw_input("Please input the string to be checked for numeric: ")
 print(unicode(Text_to_check,'utf-8').isnumeric())
 
 # Solution: 4
-print(__file__)
+
 import os.path
 # FilePath= os.path.join('D:\Github','Python Tutorial','LearnPython')
 for file in [ __file__, os.path.dirname(__file__), '/', './broken_link']:
@@ -52,3 +52,23 @@ for file in [ __file__, os.path.dirname(__file__), '/', './broken_link']:
     print('Is Link?    :', os.path.islink(file))
     print('Exists?     :', os.path.exists(file))
     print('Link Exists?:', os.path.lexists(file))
+
+# Solution: 5
+
+import time
+import datetime
+structtime=time.localtime()
+print(datetime.datetime(*structtime[:6]))
+print(time.ctime())
+
+# Solution: 6
+print("Not Read yet for 6th problem")
+
+
+# Solution: 7
+print("Not Read yet for 7th problem")
+
+# Solution: 8
+import os
+(Path,ext)=os.path.splitext(os.path.abspath(__file__))
+print("root of the file is {0} and extension of the file is{1}".format(Path,ext))
