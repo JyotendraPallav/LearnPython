@@ -15,3 +15,9 @@ def fib(max):
 #     print(n,end=' ')
 
 print(list(fib(1000)))
+
+#####################################################################################################
+
+def build_match_and_apply_function():
+    def match(word):
+        return 
