@@ -15,7 +15,7 @@ def fib(max):
 # for n in fib(1000):
 #     print(n,end=' ')
 
-print("Here comes your fibonacci series - \n{0}".format(list(fib(random.Random(3000)))))
+print("Here comes your fibonacci series - \n{0}".format(list(fib(random.sample(range(3000),1)[0]))))
 
 #####################################################################################################
 import re
@@ -30,6 +30,7 @@ def build_match_and_apply_function(pattern,search,replace):
 def rules(rule_filename):
     with open(rule_filename) as pattern_file:
         for line in pattern_file:
+            # print("This line is: ",line)
             pattern,search,replace=line.split(None,3)
             yield build_match_and_apply_function(pattern,search,replace)
 
