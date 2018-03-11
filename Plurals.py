@@ -4,6 +4,10 @@
 # printing fibonacci series
 
 from __future__ import print_function
+
+import  sys
+print(sys.version)
+
 import random
 
 def fib(max):
@@ -33,3 +37,5 @@ def plurals(noun):
         return noun + 's'
 
 print("Plural: ", plurals(raw_input("Please input the string: ")))
+
+print("Need to learn generator from this chapter - Parking it for now")
