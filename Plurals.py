@@ -1,4 +1,4 @@
-# Program copied from book of chapter Closures and generators for 
+# Program copied from book of chapter Closures and generators for
 # converting nouns into plurals
 
 # printing fibonacci series
@@ -17,27 +17,19 @@ def fib(max):
 
 print("Here comes your fibonacci series - \n{0}".format(list(fib(random.sample(range(3000),1)[0]))))
 
-#####################################################################################################
+
+print('################################################### Method 1: For converting into Plurals #########################################')
+
 import re
-def build_match_and_apply_function(pattern,search,replace):
-    
-    def match_word(word):
-        return re.search(pattern,search)
-    def apply_word(word):
-        return re.sub('$',replace,word)
-    return (match_word,apply_word)
 
-def rules(rule_filename):
-    with open(rule_filename) as pattern_file:
-        for line in pattern_file:
-            # print("This line is: ",line)
-            pattern,search,replace=line.split(None,3)
-            yield build_match_and_apply_function(pattern,search,replace)
+def plurals(noun):
+    if re.search('[SXZ]$',noun):
+        return re.sub('$','es',noun)
+    elif re.search('[^aeioudgkprt]h$',noun):
+        return re.sub('$','es',noun)
+    elif re.search('[^aeiou]y$',noun):
+        return re.sub('y$','ies',noun)
+    else:
+        return noun + 's'
 
-def plurals(noun,rule_file='plural4-rules.txt'):
-    for match_name,apply_name in rules(rule_file):
-        if match_name(noun):
-            return apply_name(noun)
-    raise ValueError('No matching rule for {0}'.format(noun))
-    
-print("Here is your plural: {0}".format(plurals(raw_input("Enter the noun to convert into Plural: "))))
+print("Plural: ", plurals(raw_input("Please input the string: ")))
